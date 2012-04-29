@@ -2,11 +2,11 @@
 Name:       libICE
 Summary:    X.Org X11 libICE runtime library
 Version:    1.0.7
-Release:    0
+Release:    2.25
 Group:      System/Libraries
 License:    MIT/X11
 URL:        http://www.x.org
-Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
+Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(xproto)
