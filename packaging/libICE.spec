@@ -7,6 +7,7 @@ Group:      System/Libraries
 License:    MIT/X11
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
+Source1001: packaging/libICE.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(xproto)
@@ -33,6 +34,7 @@ The X.Org X11 ICE (Inter-Client Exchange) development package.
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure --disable-static
 make %{?jobs:-j%jobs}
@@ -55,6 +57,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libICE.manifest
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README ChangeLog
 %{_libdir}/libICE.so.6
@@ -64,6 +67,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libICE.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %dir %{_includedir}/X11/ICE
