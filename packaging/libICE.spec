@@ -63,4 +63,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/X11/ICE
 %{_libdir}/libICE.so
 %{_libdir}/pkgconfig/ice.pc
-
