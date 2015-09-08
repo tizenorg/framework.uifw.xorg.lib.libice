@@ -34,6 +34,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -50,7 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING ChangeLog
+/usr/share/license/%{name}
+#%doc AUTHORS COPYING ChangeLog
 %{_libdir}/libICE.so.6
 %{_libdir}/libICE.so.6.3.0
 
